@@ -8,10 +8,10 @@ function HomePage() {
         <div className="wrapper">
           <h1 className="title">Find Real Estate & Get Your Dream Place</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
-            explicabo suscipit cum eius, iure est nulla animi consequatur
-            facilis id pariatur fugit quos laudantium temporibus dolor ea
-            repellat provident impedit!
+          MikistEstate is a leading real estate platform dedicated to
+           empowering consumers with data, inspiration, and knowledge around
+            the place they call home. We connect people with the best local
+             professionals who can help with their real estate needs.
           </p>
           <SearchBar />
           <div className="boxes">
