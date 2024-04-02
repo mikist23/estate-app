@@ -2,6 +2,7 @@ import { useContext } from "react";
 import SearchBar from "../../components/searchBar/SearchBar";
 import "./homePage.scss";
 import { AuthContext } from "../../context/AuthContext";
+import { Link } from "react-router-dom";
 
 function HomePage() {
   const { currentUser } = useContext(AuthContext);

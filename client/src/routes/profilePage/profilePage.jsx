@@ -51,6 +51,14 @@ function ProfilePage() {
               <button>Create New Post</button>
             </Link>
           </div>
+
+          <List />
+          <div className="title">
+            <h1>Saved List</h1>
+          </div>
+          <List />
+
+{/** 
           <Suspense fallback={<p>Loading...</p>}>
             <Await
               resolve={data.postResponse}
@@ -70,8 +78,11 @@ function ProfilePage() {
               {(postResponse) => <List posts={postResponse.data.savedPosts} />}
             </Await>
           </Suspense>
+*/}
         </div>
       </div>
+
+      {/** 
       <div className="chatContainer">
         <div className="wrapper">
           <Suspense fallback={<p>Loading...</p>}>
@@ -84,7 +95,18 @@ function ProfilePage() {
           </Suspense>
         </div>
       </div>
+      */}
+
+
+     <div className="chatContainer">
+        <div className="wrapper">
+          <Chat/>
+        </div>
+      </div>
+    
+
     </div>
+    
   );
 }
 
