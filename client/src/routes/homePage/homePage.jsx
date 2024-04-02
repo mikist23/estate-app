@@ -1,17 +1,21 @@
+import { useContext } from "react";
 import SearchBar from "../../components/searchBar/SearchBar";
 import "./homePage.scss";
+import { AuthContext } from "../../context/AuthContext";
 
 function HomePage() {
+  const { currentUser } = useContext(AuthContext);
+
   return (
     <div className="homePage">
       <div className="textContainer">
         <div className="wrapper">
           <h1 className="title">Find Real Estate & Get Your Dream Place</h1>
           <p>
-          MikistEstate is a leading real estate platform dedicated to
-           empowering consumers with data, inspiration, and knowledge around
+            MikistEstate is a leading real estate platform dedicated to
+            empowering consumers with data, inspiration, and knowledge around
             the place they call home. We connect people with the best local
-             professionals who can help with their real estate needs.
+            professionals who can help with their real estate needs.
           </p>
           <SearchBar />
           <div className="boxes">
