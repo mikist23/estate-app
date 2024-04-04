@@ -6,12 +6,21 @@ import DOMPurify from "dompurify";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import apiRequest from "../../lib/apiRequest";
+import ChatComponent from "../ChatComponent";
+import Chat from "../../components/chat/Chat";
+
 
 function SinglePage() {
   const post = useLoaderData();
   const [saved, setSaved] = useState(post.isSaved);
   const { currentUser } = useContext(AuthContext);
   const navigate = useNavigate();
+  const [showCommunication, setShowCommunication] = useState(false);
+
+  const handleContactSeller = () => {
+    // Implement communication logic here, such as showing a chat interface
+    setShowCommunication(true);
+  };
 
   const handleSave = async () => {
     if (!currentUser) {
@@ -45,6 +54,7 @@ function SinglePage() {
               <div className="user">
                 <img src={post.user.avatar} alt="" />
                 <span>{post.user.username}</span>
+                
               </div>
             </div>
             <div
@@ -144,6 +154,14 @@ function SinglePage() {
               Send a Message
             </button>
             <button
+          onClick={handleContactSeller}
+          disabled={currentUser.username  === post.user.username}
+          className={showCommunication ? "hidden" : ""}
+        >
+          <img src="/chat.png" alt="" />
+          Contact Seller
+        </button>
+            <button
               onClick={handleSave}
               style={{
                 backgroundColor: saved ? "#fece51" : "white",
@@ -153,6 +171,13 @@ function SinglePage() {
               {saved ? "Place Saved" : "Save the Place"}
             </button>
           </div>
+           
+         {showCommunication && (
+          <div className="communication">
+           <ChatComponent post={post} />
+          </div>
+        )}
+      
         </div>
       </div>
     </div>

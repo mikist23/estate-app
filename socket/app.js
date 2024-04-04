@@ -29,9 +29,15 @@ io.on("connection", (socket) => {
   });
 
   socket.on("sendMessage", ({ receiverId, data }) => {
-    const receiver = getUser(receiverId);
+  const receiver = getUser(receiverId);
+  if (receiver && receiver.socketId) {
     io.to(receiver.socketId).emit("getMessage", data);
-  });
+  } else {
+    // Handle the case when receiver is not found or does not have a socketId
+    console.log(`User ${receiverId} is not online or doesn't exist.`);
+    // You may want to emit an error message or take other appropriate actions here
+  }
+});
 
   socket.on("disconnect", () => {
     removeUser(socket.id);
