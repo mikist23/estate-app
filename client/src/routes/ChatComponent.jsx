@@ -55,4 +55,43 @@ function ChatComponent() {
   );
 }
 
+const styles = {
+  container: {
+    backgroundColor: "#f2f2f2",
+    borderRadius: "5px",
+    padding: "10px",
+    boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+  },
+  messages: {
+    maxHeight: "200px",
+    overflowY: "auto",
+    marginBottom: "10px",
+  },
+  message: {
+    padding: "5px 10px",
+    borderRadius: "5px",
+    marginBottom: "5px",
+    maxWidth: "70%",
+  },
+  input: {
+    display: "flex",
+    alignItems: "center",
+  },
+  inputField: {
+    flex: "1",
+    padding: "8px",
+    borderRadius: "5px",
+    border: "1px solid #ccc",
+    marginRight: "10px",
+  },
+  sendButton: {
+    padding: "8px 15px",
+    borderRadius: "5px",
+    backgroundColor: "#007bff",
+    color: "#fff",
+    border: "none",
+    cursor: "pointer",
+  },
+};
+
 export default ChatComponent;
