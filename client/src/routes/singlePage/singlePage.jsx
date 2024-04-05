@@ -155,7 +155,7 @@ function SinglePage() {
             </button>
             <button
           onClick={handleContactSeller}
-          disabled={currentUser.username  === post.user.username}
+          disabled={currentUser && currentUser.username === post.user.username}
           className={showCommunication ? "hidden" : ""}
         >
           <img src="/chat.png" alt="" />
