@@ -7,7 +7,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import apiRequest from "../../lib/apiRequest";
 import ChatComponent from "../ChatComponent";
-import Chat from "../../components/chat/Chat";
+import chat from "../../components/chat/Chat";
 
 
 function SinglePage() {
